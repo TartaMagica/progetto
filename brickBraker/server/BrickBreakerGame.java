@@ -1,12 +1,6 @@
-package brickBraker;
+package brickBraker.server;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionAdapter;
-import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 public class BrickBreakerGame extends JFrame {
@@ -17,11 +11,15 @@ public class BrickBreakerGame extends JFrame {
     private Paddle paddle;
     private ArrayList<Brick> bricks;
 
+    //client
+    /* 
     private BufferedImage buffer;
     private Graphics bufferGraphics;
+    */
 
     public BrickBreakerGame() {
         //client
+        /*
         setTitle("Brick Breaker");
         setSize(WIDTH, HEIGHT);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -30,6 +28,7 @@ public class BrickBreakerGame extends JFrame {
 
         buffer = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
         bufferGraphics = buffer.getGraphics();
+        */
 
         //server
         ball = new Ball(WIDTH / 2, HEIGHT / 2);
@@ -43,6 +42,7 @@ public class BrickBreakerGame extends JFrame {
         }
 
         //client
+        /*
         Timer timer = new Timer(10, new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
                 update();
@@ -60,6 +60,7 @@ public class BrickBreakerGame extends JFrame {
         });
 
         setFocusable(true);
+        */
     }
 
     //server
@@ -100,6 +101,7 @@ public class BrickBreakerGame extends JFrame {
     }
 
     //client
+    /* 
     @Override
     public void paint(Graphics g) {
         // Disegna sul buffer
@@ -116,13 +118,16 @@ public class BrickBreakerGame extends JFrame {
         // Copia il buffer sulla finestra
         g.drawImage(buffer, 0, 0, this);
     }
+    */
 
     public static void main(String[] args) {
         //client
+        /* 
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 new BrickBreakerGame().setVisible(true);
             }
         });
+        */
     }
 }

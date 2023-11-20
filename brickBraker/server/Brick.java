@@ -1,4 +1,4 @@
-package brickBraker;
+package brickBraker.server;
 
 import java.awt.*;
 
