@@ -21,6 +21,7 @@ public class BrickBreakerGame extends JFrame {
     private Graphics bufferGraphics;
 
     public BrickBreakerGame() {
+        //client
         setTitle("Brick Breaker");
         setSize(WIDTH, HEIGHT);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -30,6 +31,7 @@ public class BrickBreakerGame extends JFrame {
         buffer = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
         bufferGraphics = buffer.getGraphics();
 
+        //server
         ball = new Ball(WIDTH / 2, HEIGHT / 2);
         paddle = new Paddle(WIDTH / 2 - Paddle.WIDTH / 2, HEIGHT - 50);
         bricks = new ArrayList<>();
@@ -40,6 +42,7 @@ public class BrickBreakerGame extends JFrame {
             }
         }
 
+        //client
         Timer timer = new Timer(10, new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
                 update();
@@ -59,6 +62,7 @@ public class BrickBreakerGame extends JFrame {
         setFocusable(true);
     }
 
+    //server
     private void update() {
         ball.move();
         checkCollision();
@@ -95,6 +99,7 @@ public class BrickBreakerGame extends JFrame {
         }
     }
 
+    //client
     @Override
     public void paint(Graphics g) {
         // Disegna sul buffer
@@ -113,6 +118,7 @@ public class BrickBreakerGame extends JFrame {
     }
 
     public static void main(String[] args) {
+        //client
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 new BrickBreakerGame().setVisible(true);
